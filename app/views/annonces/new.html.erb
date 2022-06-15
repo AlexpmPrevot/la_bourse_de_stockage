@@ -1,0 +1,12 @@
+<%= simple_form_for [current_user, @annonce] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description, as: :text %>
+  <%= f.number_field :price %>
+  <%= f.input :temperature, collection: Annonce.temperatures, label_method: :first, value_method: :second, as: :radio_buttons %>
+  <%= f.input :quantity %>
+  <%= f.input :stock_type, collection: Annonce.stock_types, label_method: :first, value_method: :second, as: :radio_buttons %>
+  <%= f.input :transit %>
+  <%= f.input :long_term %>
+  <%= f.button :submit %>
+<% end %>

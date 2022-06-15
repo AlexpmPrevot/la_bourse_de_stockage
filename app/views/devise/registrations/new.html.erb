@@ -15,10 +15,30 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :company,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "company name" }%>
+    <%= f.input :siret,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Siret" }%>
+    <%= f.input :vat,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "TVA intracommunautaire" }%>
+    <%= f.input :interlocutor,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Interlocuteur" }%>
+    <%= f.input :phone,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "téléphone" }%>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "S'inscrire" %>
   </div>
 <% end %>
 

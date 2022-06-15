@@ -1,0 +1,34 @@
+<h1>Mon tableau de bord</h1>
+
+<div class="container">
+  <div>
+    <h3>Mes annonces</h3>
+    <%= link_to 'Ajouter une annonce', new_user_annonce_path(current_user) %>
+  </div>
+  <% if @annonces %>
+    <% @annonces.each do |annonce|%>
+      <div class="card" style="width: 300px;">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= annonce.name %></h5>
+          <p class="card-text"><%= annonce.description %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= annonce.address %></li>
+          <li class="list-group-item"><%= annonce.created_at %></li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <%= link_to 'Gérer', edit_user_annonce_path(current_user, annonce), class: "btn btn-gradient"  %>
+          <%= link_to 'Supprimer', user_annonce_path(annonce), class: "btn btn-gradient", method: :delete,
+                                 data: {:confirm => "Etes-vous sûr?" } ,
+                                 :title => "Supprimer l'annonce" %>
+        </div>
+      </div>
+
+    <% end %>
+  <% else %>
+    <p>Aucune annonce publiée</p>
+  <% end %>
+
+</div>
