@@ -54,3 +54,33 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.unavailable {
+  background-color: rgb(180, 180, 180);
+
+  li {
+    background-color: rgb(180, 180, 180);
+  }
+}
+
+.unavailable-strip {
+  top: 7em;
+  right: -5.2em;
+  color: #fff;
+  display: block;
+  position:absolute;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .08em;
+  border-radius: 4px;
+  background-color: #A00;
+  padding: 0.5em 11em ;
+  text-shadow: 0 0 0.75em #444;
+  box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+  font: bold 16px/1.2em Montserrat, Sans-Serif;
+  -webkit-text-shadow: 0 0 0.75em #444;
+  -webkit-box-shadow: 0 0 0.5em
+  rgba(0,0,0,0.5);
+  -webkit-transform: rotate(40deg) scale(0.75,1);
+  z-index:10;
+}

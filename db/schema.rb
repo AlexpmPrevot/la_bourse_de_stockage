@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_15_101827) do
+ActiveRecord::Schema.define(version: 2022_06_23_154143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "annonces", force: :cascade do |t|
     t.string "name"
-    t.string "address"
     t.integer "temperature"
     t.text "description"
     t.integer "price"
@@ -28,6 +27,15 @@ ActiveRecord::Schema.define(version: 2022_06_15_101827) do
     t.boolean "long_term"
     t.integer "stock_type"
     t.integer "quantity"
+    t.boolean "available", default: true
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "street_number"
+    t.integer "zipcode"
+    t.string "street_name"
+    t.string "city"
+    t.string "address_complement"
+    t.string "country"
     t.index ["user_id"], name: "index_annonces_on_user_id"
   end
 
@@ -41,10 +49,10 @@ ActiveRecord::Schema.define(version: 2022_06_15_101827) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "role"
     t.string "company"
-    t.integer "phone"
     t.string "interlocutor"
     t.bigint "siret"
     t.string "vat"
+    t.bigint "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

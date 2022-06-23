@@ -1,45 +1,53 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 ">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :company,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "company name" }%>
-    <%= f.input :siret,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Siret" }%>
-    <%= f.input :vat,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "TVA intracommunautaire" }%>
-    <%= f.input :interlocutor,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Interlocuteur" }%>
-    <%= f.input :phone,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "téléphone" }%>
-  </div>
+        <div class="form-inputs">
+           <%= f.input :role, label: 'Je souhaite:', collection: [['Louer un espace de stockage', 'user'], ['Trouvez un espace à louer', 'client']], label_method: :first, value_method: :second, as: :radio_buttons %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :company,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "company name" }%>
+          <%= f.input :siret,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Siret" }%>
+          <%= f.input :vat,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "TVA intracommunautaire" }%>
+          <%= f.input :interlocutor,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Interlocuteur" }%>
+          <%= f.input :phone,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "téléphone" }%>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "S'inscrire" %>
+        <div class="form-actions">
+          <%= f.button :submit, "S'inscrire", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+
 
 <%= render "devise/shared/links" %>

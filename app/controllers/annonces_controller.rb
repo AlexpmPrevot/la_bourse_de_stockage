@@ -2,6 +2,13 @@ class AnnoncesController < ApplicationController
 
   def index
     @annonces = Annonce.all
+
+    @markers = @annonces.geocoded.map do |annonce|
+      {
+        lat: annonce.latitude,
+        lng: annonce.longitude
+      }
+    end
   end
 
   def new
@@ -45,6 +52,17 @@ class AnnoncesController < ApplicationController
       flash[:error] = 'Something went wrong'
     end
     redirect_to user_path
+  end
+
+  def availability
+    @annonce = Annonce.find(params[:annonce_id])
+    if @annonce.available == true
+      @annonce.available = false
+    else
+      @annonce.available = true
+    end
+    @annonce.save
+    redirect_to user_path(current_user)
   end
 
   private

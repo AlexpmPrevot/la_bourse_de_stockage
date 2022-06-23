@@ -2,23 +2,32 @@
   <div class="container">
     <h1>La Bourse de Stockage 2.0, <strong>la solution</strong> à vos besoins de <strong>transit</strong> et <strong>stockage longue durée</strong>!</h1>
     <p> Gagnez en souplesse, sérénité et réactivité grâce à nos partenaires.</p>
-    <%= link_to "Découvrir", new_user_registration_path, class: "btn btn-gradient" %>
+    <%= link_to "Découvrir", new_user_registration_path, class: "btn btn-gradient me-3" %>
   </div>
 </div>
 
-<div class="cards row">
-  <div class="card-category col-md-4 mb-3">
-    <h2>Simple</h2>
-    <p>Une seule plateforme pour vos besoins ponctuels de stockage</p>
+<div class="tabs mb-5" data-controller="tabs">
+  <div class="tabs-btn-container">
+    <button class="tab active-tab" data-action="click->tabs#tabsAnimation" data-tabs-target="button">
+      Simple
+    </button>
+    <button class="tab" data-action="click->tabs#tabsAnimation" data-tabs-target="button">
+      Rapide
+    </button>
+    <button class="tab" data-action="click->tabs#tabsAnimation" data-tabs-target="button">
+      Efficace
+    </button>
   </div>
-
-  <div class="card-category col-md-4 mb-3">
-    <h2>Rapide</h2>
-    <p>Réservez un espace de stockage en quelques clics</p>
+  <div class="tab-content active-tab-content" data-tabs-target="content">
+    <h3>Simple</h3>
+    <p>« Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue</p>
   </div>
-
-  <div class="card-category col-md-4 mb-3">
-    <h2>Efficace</h2>
-    <p>Optimisez votre espace de stockage et/ou trouvez un emplacement</p>
+  <div class="tab-content" data-tabs-target="content">
+    <h3>Rapide</h3>
+    <p>« Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede.</p>
+  </div>
+  <div class="tab-content" data-tabs-target="content">
+    <h3>Efficace</h3>
+    <p>« Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
   </div>
 </div>
